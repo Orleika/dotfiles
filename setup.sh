@@ -1,10 +1,10 @@
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 curl -fLo ~/.zplug/zplug --create-dirs https://git.io/zplug
 git clone https://github.com/milkbikis/powerline-shell ~/.powerline-shell
 cd ~/.powerline-shell/;./install.sh
 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | sh
-
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # symlinks
 if [ -f ~/.zshrc ]; then
