@@ -1,22 +1,15 @@
-export ZSH=~/.oh-my-zsh
-ZSH_THEME="cloud"
-source $ZSH/oh-my-zsh.sh
 source ~/.zplug/zplug
 
-zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-history-substring-search", do:"__zsh_version 4.3"
 zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-syntax-highlighting", nice:10
+zplug "junegunn/fzf-bin", as:command, from:gh-r, file:fzf, of:"*linux_amd64*"
+zplug "peco/peco", as:command, from:gh-r, of:"*linux_amd64*"
+zplug "mollifier/cd-gitroot"
+zplug "b4b4r07/enhancd", of:enhancd.sh
 
-zplug "lib/bzr", from:oh-my-zsh
-zplug "lib/clipboard", from:oh-my-zsh
-zplug "lib/compfix", from:oh-my-zsh
-zplug "lib/completion", from:oh-my-zsh
-zplug "lib/correction", from:oh-my-zsh
-zplug "lib/diagnostics", from:oh-my-zsh
-zplug "lib/directories", from:oh-my-zsh
-zplug "lib/functions", from:oh-my-zsh
-zplug "lib/git", from:oh-my-zsh
-zplug "lib/history", from:oh-my-zsh
-zplug "lib/spectrum", from:oh-my-zsh
+if ! zplug check; then
+    zplug install
+fi
 
 zplug load
