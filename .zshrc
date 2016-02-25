@@ -13,3 +13,17 @@ if ! zplug check; then
 fi
 
 zplug load
+
+# the Clover to your prompt
+PROMPT='%F{green}🍀%f %F{cyan}%~%f '
+
+# git
+autoload -Uz vcs_info
+zstyle ":vcs_info:*" enable git
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "+"
+zstyle ':vcs_info:git:*' unstagedstr "-"
+zstyle ':vcs_info:git:*' formats '%F{yellow}[%b]%f%F{red}%u%f%F{cyan}%c%f '
+zstyle ':vcs_info:git:*' actionformats '%F{yellow}[%b|%a]%f%F{red}%u%f%F{cyan}%c%f'
+precmd() { vcs_info }
+PROMPT=$PROMPT'${vcs_info_msg_0_}'
