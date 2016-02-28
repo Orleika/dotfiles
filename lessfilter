@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 case `basename $1` in
     *.log)
