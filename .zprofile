@@ -15,3 +15,14 @@ setopt correct
 setopt mark_dirs
 setopt auto_param_slash
 setopt auto_cd
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
+setopt hist_no_store
+setopt hist_expand
+setopt inc_append_history
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=50000
