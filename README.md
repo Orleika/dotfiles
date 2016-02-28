@@ -4,7 +4,8 @@ Orleika's dotfiles
 ## Installation
 ```
 $ git clone https://github.com/Orleika/dotfiles.git ~/dotfiles
-$ cd ~/dotfiles;./setup.sh
+$ cd ~/dotfiles
+$ exec ./setup.sh
 ```
 
 ## Requirements
