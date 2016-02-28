@@ -1,23 +1,27 @@
-#!/bin/sh
+#!/bin/bash
+set -eu
 
 # setup zsh
-chsh -s /usr/bin/zsh
+chsh -s `which zsh`
 
 # install zplug
 curl -fLo ~/.zplug/zplug --create-dirs https://git.io/zplug
 
 # symlinks
-if [ -f ~/.zshrc ]; then
-  rm ~/.zshrc
+dotfiles=(.zshrc .zprofile .exports .aliases .functions .gitconfig .editorconfig)
+for file in ${dotfiles[@]}; do
+    if [ -f ~/${file} ]; then
+        rm ~/${file}
+    fi
+    ln -s ~/dotfiles/${file} ~/${file}
+done
+if [ ! -d ~/bin ]; then
+    mkdir ~/bin
 fi
-ln -s ~/dotfiles/.zshrc ~/.zshrc
-ln -s ~/dotfiles/.zprofile ~/.zprofile
-ln -s ~/dotfiles/.exports ~/.exports
-ln -s ~/dotfiles/.aliases ~/.aliases
-ln -s ~/dotfiles/.functions ~/.functions
-ln -s ~/dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/dotfiles/.editorconfig ~/.editorconfig
-if [ ! -e ~/bin ]; then
-  mkdir ~/bin
+if [ -f ~/bin/lessfilter ]; then
+    rm ~/bin/lessfilter
 fi
-ln -s ~/dotfiles/lessfilter ~/bin/lessfilter;chmod 755 ~/bin/lessfilter
+ln -s ~/dotfiles/lessfilter ~/bin/lessfilter
+
+# reflesh shell
+exec -l $SHELL
