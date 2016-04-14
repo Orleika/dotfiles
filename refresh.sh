@@ -1,6 +1,8 @@
 #!/bin/bash
 set -eu
 
+dotfiles_dir=$(cd $(dirname $0) && pwd)
+
 plugins=(.zplug .enhancd)
 for dir in ${plugins[@]}; do
     if [ -d ~/${dir} ]; then
@@ -8,13 +10,16 @@ for dir in ${plugins[@]}; do
     fi
 done
 
-dotfiles=(.zshrc .zprofile .exports .aliases .functions .gitconfig .editorconfig)
-for file in ${dotfiles[@]}; do
-    if [ -f ~/${file} ]; then
-        rm ~/${file}
+dotfiles=`find $dotfiles_dir -maxdepth 1 -type f -name ".*"`
+for file in $dotfiles; do
+    if [ -f ~/${file##*/} ]; then
+        rm ~/${file##*/}
     fi
 done
 
-if [ -f ~/bin/lessfilter ]; then
-    rm ~/bin/lessfilter
-fi
+binaries=`find ${dotfiles_dir}/bin -maxdepth 1 -type f`
+for file in $dotfiles; do
+    if [ -f ~/bin/${file##*/} ]; then
+        rm ~/bin/${file##*/}
+    fi
+done
