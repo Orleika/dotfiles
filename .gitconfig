@@ -3,7 +3,7 @@
   email = orleika@users.noreply.github.com
 [core]
   excludesfile = ~/.gitignore
-  autoCRLF = input
+  autoCRLF = false
   editor = vim -c 'set fileencoding=utf-8'
   filemode = false
 [color]
