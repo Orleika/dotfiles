@@ -38,3 +38,6 @@
   rebase = preserve
 [merge]
   ff = false
+[diff "office"]
+  binary = true
+  textconv = "~/bin/tika --text"
