@@ -23,16 +23,14 @@
   rs = reset
   ad = add
   cm = commit
-  ca = commit --amend
+  cma = commit --amend
   co = checkout
   chp = cherry-pick
   br = branch
-  ba = branch -a
-  bm = branch --merged
-  bn = branch --no-merged
+  brv = branch -avv
   upidx = update-index --add
   l = log --one-line
-  lg = log --stat --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [pull]
   rebase = preserve
