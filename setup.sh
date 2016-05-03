@@ -6,9 +6,6 @@ dotfiles_dir=$(cd $(dirname $0) && pwd)
 # setup zsh
 chsh -s `which zsh`
 
-# install zplug
-curl -fLo ~/.zplug/zplug --create-dirs https://git.io/zplug
-
 # symlinks
 dotfiles=`find $dotfiles_dir -maxdepth 1 -type f -name ".*"`
 for file in $dotfiles; do
@@ -28,5 +25,10 @@ for file in $dotfiles; do
     ln -s ${file} ~/bin/${file##*/}
 done
 
+# install zplug
+source $dotfiles_dir/.exports
+curl -fsL git.io/zplug | zsh
+
 # reflesh shell
 exec -l $SHELL
+

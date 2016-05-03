@@ -1,18 +1,18 @@
 source ~/.zplug/zplug
 
-zplug "junegunn/fzf-bin", as:command, from:gh-r, file:fzf, of:"*linux_amd64*"
-zplug "peco/peco", as:command, from:gh-r, of:"*linux_amd64*"
+zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf, use:"*linux_amd64*"
+zplug "peco/peco", as:command, from:gh-r, use:"*linux_amd64*"
 zplug "stedolan/jq", from:gh-r, as:command
 zplug "mrowa44/emojify", as:command
 
-zplug "zsh-users/zsh-history-substring-search", do:"__zsh_version 4.3"
+zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
 zplug "mollifier/cd-gitroot"
 zplug "b4b4r07/emoji-cli", \
     if:"(( $+commands[jq] ))", \
     on:"junegunn/fzf-bin"
-zplug "b4b4r07/enhancd", of:enhancd.sh
+zplug "b4b4r07/enhancd", use:enhancd.sh
 
 if ! zplug check; then
     zplug install
