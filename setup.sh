@@ -3,9 +3,6 @@ set -eu
 
 dotfiles_dir=$(cd $(dirname $0) && pwd)
 
-# setup zsh
-chsh -s `which zsh`
-
 # symlinks
 dotfiles=`find $dotfiles_dir -maxdepth 1 -type f -name ".*"`
 for file in $dotfiles; do
@@ -31,4 +28,3 @@ curl -fsL git.io/zplug | zsh
 
 # reflesh shell
 exec -l $SHELL
-
