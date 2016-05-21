@@ -6,6 +6,7 @@
   autoCRLF = false
   editor = vim -c 'set fileencoding=utf-8'
   filemode = false
+  quotepath = false
 [push]
   default = simple
 [alias]
@@ -24,6 +25,8 @@
   rebase = preserve
 [merge]
   ff = false
+[gui]
+  encoding = utf-8
 [diff "office"]
   binary = true
   textconv = "~/bin/tika --text"
