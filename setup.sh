@@ -26,5 +26,3 @@ done
 source $dotfiles_dir/.exports
 curl -fsL git.io/zplug | zsh
 
-# reflesh shell
-exec -l $SHELL
