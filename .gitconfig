@@ -1,6 +1,7 @@
 [user]
-  name = Orleika
-  email = orleika@users.noreply.github.com
+  name = orleika
+  email = orleika.net@gmail.com
+  signingkey = C7EBD852
 [core]
   excludesfile = ~/.gitignore
   autoCRLF = false
@@ -30,3 +31,6 @@
 [diff "office"]
   binary = true
   textconv = "~/bin/tika --text"
+[gpg]
+  program = gpg2
+
