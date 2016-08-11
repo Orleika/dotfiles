@@ -15,7 +15,7 @@ if [ ! -d ~/bin ]; then
     mkdir ~/bin
 fi
 binaries=`find ${dotfiles_dir}/bin -maxdepth 1 -type f`
-for file in $dotfiles; do
+for file in $binaries; do
     if [ -f ~/bin/${file##*/} ]; then
         rm ~/bin/${file##*/}
     fi
