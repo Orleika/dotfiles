@@ -2,4 +2,4 @@ export LESS='-R'
 export LESSOPEN='|lessfilter %s'
 export GOPATH=$HOME/go
 export ZPLUG_HOME=$HOME/.zplug
-export PATH=$PATH:~/bin:$ZPLUG_HOME:$GOPATH/bin
+export PATH=$PATH:~/.local/bin:~/bin:$ZPLUG_HOME:$GOPATH/bin
