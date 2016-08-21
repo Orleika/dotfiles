@@ -1,3 +1,4 @@
+export LESSCHARSET=utf-8
 export LESS='-R'
 export LESSOPEN='|lessfilter %s'
 export GOPATH=$HOME/go
