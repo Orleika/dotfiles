@@ -40,3 +40,6 @@ zstyle ":vcs_info:git:*" actionformats "%F{yellow}[%b|%a]%f%F{red}%u%f%F{cyan}%c
 precmd() { vcs_info }
 PROMPT=$PROMPT'${vcs_info_msg_0_}
 %# '
+
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
