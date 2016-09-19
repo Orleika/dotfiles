@@ -21,6 +21,13 @@ for file in $binaries; do
     fi
     ln -s ${file} ~/bin/${file##*/}
 done
+if [ ! -d ~/.ssh ]; then
+    mkdir ~/.ssh
+fi
+sshfiles=`find ${dotfiles_dir}/.ssh -maxdepth 1 -type f`
+for file in $sshfiles; do
+    cat ${file} >> ~/.ssh/${file##*/}
+done
 
 # install zplug
 source $dotfiles_dir/.exports
