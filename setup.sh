@@ -31,5 +31,5 @@ done
 
 # install zplug
 source $dotfiles_dir/.exports
-curl -fsL git.io/zplug | zsh
+git clone https://github.com/zplug/zplug $ZPLUG_HOME
 
