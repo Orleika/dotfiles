@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eu
+set -eu -o pipefail
 
 dotfiles_dir=$(cd "$(dirname "$0")" && pwd)
 
@@ -33,4 +33,3 @@ done
 # shellcheck source=/dev/null
 . "$dotfiles_dir"/.exports
 git clone https://github.com/zplug/zplug "$ZPLUG_HOME"
-

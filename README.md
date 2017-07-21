@@ -1,9 +1,9 @@
 # dotfiles
-Orleika's dotfiles
+orleika's dotfiles
 
 ## Installation
 ```
-$ git clone https://github.com/Orleika/dotfiles.git ~/dotfiles
+$ git clone https://github.com/orleika/dotfiles.git ~/dotfiles
 $ cd ~/dotfiles
 $ exec ./setup.sh
 ```
@@ -13,6 +13,6 @@ $ exec ./setup.sh
 * zsh
 
 ## License
-Copyright (c) 2016 orleika
+Copyright (c) 2017 orleika
 Released under the MIT license
 http://opensource.org/licenses/mit-license.php

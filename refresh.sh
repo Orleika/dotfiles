@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eu
+set -eu -o pipefail
 
 dotfiles_dir=$(cd "$(dirname "$0")" && pwd)
 
