@@ -11,8 +11,6 @@ $ exec ./setup.sh
 ## Requirements
 * git
 * zsh
-* [Pygments](http://pygments.org/)
-  * `pip install Pygmetns`
 
 ## License
 Copyright (c) 2016 orleika
