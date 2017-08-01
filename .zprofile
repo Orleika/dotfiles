@@ -1,5 +1,5 @@
 for file in ~/.{exports,aliases,functions}; do
-  [ -r "$file" ] && source "$file"
+  [ -r "$file" ] && . "$file"
 done
 
 # see http://zsh.sourceforge.net/Doc/Release/User-Contributions.html

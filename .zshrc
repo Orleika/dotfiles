@@ -7,7 +7,7 @@ zplug "mrowa44/emojify", as:command
 
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2 
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "mollifier/cd-gitroot"
 zplug "b4b4r07/emoji-cli", \
     on:"stedolan/jq"
