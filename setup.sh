@@ -31,5 +31,5 @@ done
 
 # install zplug
 # shellcheck source=/dev/null
-. "$dotfiles_dir"/.exports
+. "$dotfiles_dir"/.zshenv
 git clone https://github.com/zplug/zplug "$ZPLUG_HOME"
