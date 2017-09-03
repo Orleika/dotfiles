@@ -31,7 +31,6 @@ source $ZPLUG_HOME/init.zsh
 
 zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf, use:"*linux_amd64*"
 zplug "peco/peco", as:command, from:gh-r, use:"*linux_amd64*"
-zplug "stedolan/jq", from:gh-r, as:command, rename-to: jq
 zplug "mrowa44/emojify", as:command
 
 zplug "zsh-users/zsh-history-substring-search"
