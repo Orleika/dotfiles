@@ -7,21 +7,24 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/s
 zstyle ':completion:*' list-colors di=34 fi=0
 
 # see http://zsh.sourceforge.net/Doc/Release/Options.html
-setopt print_eight_bit
-setopt interactive_comments
-setopt prompt_subst
-setopt transient_rprompt
-setopt correct
-setopt mark_dirs
-setopt auto_param_slash
 setopt auto_cd
+setopt auto_param_slash
+setopt correct
+setopt extended_glob
+setopt hist_expand
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
+setopt hist_no_store
 setopt hist_reduce_blanks
 setopt hist_save_no_dups
-setopt hist_no_store
-setopt hist_expand
+setopt ignore_eof
 setopt inc_append_history
+setopt interactive_comments
+setopt mark_dirs
+setopt print_eight_bit
+setopt prompt_subst
+setopt share_history
+setopt transient_rprompt
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -37,8 +40,6 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "mollifier/cd-gitroot"
-zplug "b4b4r07/emoji-cli", \
-    on:"stedolan/jq"
 zplug "b4b4r07/enhancd", use:enhancd.sh
 
 if ! zplug check; then
@@ -70,6 +71,5 @@ PROMPT=$PROMPT'${vcs_info_msg_0_}
 
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
-
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
