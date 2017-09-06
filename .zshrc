@@ -26,21 +26,18 @@ setopt prompt_subst
 setopt share_history
 setopt transient_rprompt
 
+# http://zsh.sourceforge.net/Doc/Release/Completion-System.html
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=50000
 
 source $ZPLUG_HOME/init.zsh
 
-zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf, use:"*linux_amd64*"
-zplug "peco/peco", as:command, from:gh-r, use:"*linux_amd64*"
-zplug "mrowa44/emojify", as:command
-
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "mollifier/cd-gitroot"
-zplug "b4b4r07/enhancd", use:enhancd.sh
 
 if ! zplug check; then
     zplug install
