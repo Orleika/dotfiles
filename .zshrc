@@ -29,6 +29,10 @@ setopt transient_rprompt
 # http://zsh.sourceforge.net/Doc/Release/Completion-System.html
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
+bindkey "^[[3~" delete-char
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
+
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=50000
@@ -69,4 +73,6 @@ PROMPT=$PROMPT'${vcs_info_msg_0_}
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
 
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
+  zcompile ~/.zshrc
+fi
