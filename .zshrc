@@ -2,10 +2,6 @@ for file in ~/.{aliases,functions}; do
   [ -r "$file" ] && . "$file"
 done
 
-# see http://zsh.sourceforge.net/Doc/Release/User-Contributions.html
-zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
-zstyle ':completion:*' list-colors di=34 fi=0
-
 # see http://zsh.sourceforge.net/Doc/Release/Options.html
 setopt auto_cd
 setopt auto_param_slash
@@ -26,9 +22,6 @@ setopt prompt_subst
 setopt share_history
 setopt transient_rprompt
 
-# http://zsh.sourceforge.net/Doc/Release/Completion-System.html
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
 bindkey "^[[3~" delete-char
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
@@ -41,6 +34,7 @@ source $ZPLUG_HOME/init.zsh
 
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
+zplug "felixr/docker-zsh-completion"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 if ! zplug check; then
@@ -70,9 +64,7 @@ precmd() { vcs_info }
 PROMPT=$PROMPT'${vcs_info_msg_0_}
 %# '
 
-fpath=(~/.zsh/completion $fpath)
-autoload -Uz compinit && compinit -i
-
-if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
+if [ ! -e ~/.zshrc.zwc -o ~/.zshrc -nt ~/.zshrc.zwc ]; then
   zcompile ~/.zshrc
+  echo "zshrc is updated"
 fi
